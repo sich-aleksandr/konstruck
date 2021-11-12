@@ -213,6 +213,7 @@ a {
     letter-spacing: 0.2px;
 }
 .main-button{
+    cursor: pointer;
     width: 150px;
     height: 40px;
     background: #00A4E5;
