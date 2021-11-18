@@ -74,19 +74,21 @@ a {
 }
 .navbar__logo{
     padding: 24px 0 24px 250px;
-    display: inline-block;
+    
 }
 .navbar__menu{
-    display: inline-block;
-    height: 20px;
-    width: 420px;
-    padding: 25px 250px 25px 0;
+    width: 480px;
+    padding: 0 250px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 .navbar__menu-block{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
+    width: 420px;
     
 }
 .navbar__menu-item {
@@ -102,6 +104,79 @@ a {
 .navbar__menu-item:hover {
     text-decoration:underline;
     text-decoration-color: #00A4E5;
+}
+.material-toggle {
+    width: 60px;
+    height: 30px;
+}
+
+.material-toggle input {
+    display: none;
+}
+
+.material-toggle .toggle-label {
+    position: relative;
+    width: 150px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.material-toggle .toggle-label .track,
+.material-toggle .toggle-label .ball {
+    position: absolute;
+    display: block;
+    transition: all 250ms cubic-bezier(.4,0,.2,1);
+}
+
+.material-toggle .toggle-label .track {
+    /*тут стили серой области где ездит шарик*/
+    border: 0.5px solid #4F4F4F;
+    border-radius: 50px;
+    width: 60px;
+    height: 30px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+}
+
+.material-toggle .toggle-label .ball {
+    width: 20px;
+    height: 20px;    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #00A4E5;;
+    border-radius: 30px;
+    background: #00A4E5;;
+    margin-left: 8px;
+
+    /*стили шарика*/
+}
+
+.material-toggle .toggle-label .ball .icon {
+    background: url(img/moon.svg);
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    /*стили луны*/
+}
+
+.material-toggle input:checked ~ .toggle-label .track {
+    background: #00A4E5;
+}
+
+.material-toggle input:checked ~ .toggle-label .ball {
+    transform: translate(30px,0);
+    transition: 250ms;
+}
+
+.material-toggle input:checked ~ .toggle-label .ball .icon{
+    width: 12px;
+    height: 12px;
+    border: 4px solid #E9E9E9;
+    border-radius: 50px;
+    background: none;
+    margin-right: 8px;
 }
 .about {
     width: 941px;
@@ -213,7 +288,6 @@ a {
     letter-spacing: 0.2px;
 }
 .main-button{
-    cursor: pointer;
     width: 150px;
     height: 40px;
     background: #00A4E5;
